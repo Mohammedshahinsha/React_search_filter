@@ -43,7 +43,7 @@ export class MemStorage implements IStorage {
         email: "michaelc@example.com",
         phone: "(555) 234-5678",
         major: "Engineering",
-        status: "On Leave"
+        status: "Inactive"
       },
       {
         studentId: "STU00234",
@@ -99,7 +99,7 @@ export class MemStorage implements IStorage {
         email: "sophiam@example.com",
         phone: "(555) 901-2345",
         major: "English",
-        status: "On Leave"
+        status: "Inactive"
       },
       {
         studentId: "STU00765",

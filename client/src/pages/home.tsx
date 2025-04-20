@@ -43,7 +43,7 @@ export default function Home() {
     const matchesFilter =
       activeFilter === "all" ||
       (activeFilter === "active" && student.status === "Active") ||
-      (activeFilter === "inactive" && (student.status === "Inactive" || student.status === "On Leave"));
+      (activeFilter === "inactive" && student.status === "Inactive");
 
     return matchesSearch && matchesFilter;
   });

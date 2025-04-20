@@ -29,5 +29,5 @@ export const studentSchema = z.object({
   email: z.string().email("Invalid email format"),
   phone: z.string().min(1, "Phone number is required"),
   major: z.string().min(1, "Major is required"),
-  status: z.enum(["Active", "Inactive", "On Leave"]),
+  status: z.enum(["Active", "Inactive"]),
 });

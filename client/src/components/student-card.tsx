@@ -17,21 +17,9 @@ export default function StudentCard({ student }: StudentCardProps) {
         return "bg-green-100 text-green-800";
       case "Inactive":
         return "bg-red-100 text-red-800";
-      case "On Leave":
-        return "bg-yellow-100 text-yellow-800";
       default:
         return "bg-neutral-100 text-neutral-800";
     }
-  };
-
-  // Handle view details (placeholder function)
-  const handleViewDetails = () => {
-    alert(`View details for student ${student.name}`);
-  };
-
-  // Handle edit student (placeholder function)
-  const handleEditStudent = () => {
-    alert(`Edit student ${student.name}`);
   };
 
   return (
@@ -107,36 +95,6 @@ export default function StudentCard({ student }: StudentCardProps) {
               </svg>
               <span className="text-sm text-neutral-500">{student.major}</span>
             </div>
-          </div>
-          
-          <div className="mt-5 flex justify-between">
-            <button 
-              onClick={handleViewDetails}
-              className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-primary hover:bg-primary-light/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-            >
-              View Details
-            </button>
-            
-            <button 
-              onClick={handleEditStudent}
-              className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-neutral-700 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-500"
-            >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-4 w-4 mr-1" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" 
-                />
-              </svg>
-              Edit
-            </button>
           </div>
         </div>
       </CardContent>

@@ -101,43 +101,20 @@ export default function StudentList({
 
   // Render student list
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="bg-white rounded p-4">
+      <div className="mb-2 pb-2 border-b border-gray-300 font-medium">
+        <div className="flex justify-between">
+          <span>Name</span>
+          <span>Status</span>
+        </div>
+      </div>
+      <div>
         {students?.map((student) => (
           <StudentCard key={student.id} student={student} />
         ))}
       </div>
-
-      {/* Pagination - Note: This would be implemented with actual pagination logic in a real app */}
-      <div className="mt-6 flex items-center justify-between border-t border-neutral-200 bg-white px-4 py-3 sm:px-6">
-        <div className="flex flex-1 justify-between sm:hidden">
-          <button className="relative inline-flex items-center rounded-md border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50">Previous</button>
-          <button className="relative ml-3 inline-flex items-center rounded-md border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50">Next</button>
-        </div>
-        <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-          <div>
-            <p className="text-sm text-neutral-700">
-              Showing <span className="font-medium">1</span> to <span className="font-medium">{students?.length || 0}</span> of <span className="font-medium">{students?.length || 0}</span> results
-            </p>
-          </div>
-          <div>
-            <nav className="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-              <button className="relative inline-flex items-center rounded-l-md px-2 py-2 text-neutral-400 ring-1 ring-inset ring-neutral-300 hover:bg-neutral-50 focus:z-20 focus:outline-offset-0">
-                <span className="sr-only">Previous</span>
-                <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clipRule="evenodd" />
-                </svg>
-              </button>
-              <button className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-primary focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">1</button>
-              <button className="relative inline-flex items-center rounded-r-md px-2 py-2 text-neutral-400 ring-1 ring-inset ring-neutral-300 hover:bg-neutral-50 focus:z-20 focus:outline-offset-0">
-                <span className="sr-only">Next</span>
-                <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
-                </svg>
-              </button>
-            </nav>
-          </div>
-        </div>
+      <div className="mt-4 text-sm text-gray-500">
+        Total: {students?.length || 0} students
       </div>
     </div>
   );
